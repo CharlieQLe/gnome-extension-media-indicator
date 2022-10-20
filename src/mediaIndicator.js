@@ -103,7 +103,6 @@ var MediaPlayers = class extends St.Bin {
     }
 
     _addPlayer(busName) {
-        log(`Bus Name: ${busName}`);
         if (this._players.get(busName)) return;
 
         const player = new MprisPlayer(busName);
@@ -140,7 +139,7 @@ var MediaPlayers = class extends St.Bin {
         if (this._mediaSettings.usePreferredPlayers) {
             const preferredPlayers = this._mediaSettings.preferredPlayers;
             for (const [busName, player] of this._players) {
-                if (preferredPlayers.reduce((result, playerName) => result || busName.includes(playerName)), false)
+                if (preferredPlayers.reduce((result, playerName) => result || busName.includes(playerName), false))
                     return player;
             }
             return null;
