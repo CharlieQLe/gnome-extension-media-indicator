@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="AdwPreferencesPage" id="general">
+        <child>
+            <object class="AdwPreferencesGroup">
+                <child>
+                    <object class="AdwActionRow">
+                        <property name="title">Use Preferred Players</property>
+                        <property name="subtitle">Only show the indicator for the preferred players</property>
+                        <property name="activatable-widget">use_preferred_players</property>
+                        <child>
+                            <object class="GtkSwitch" id="use_preferred_players">
+                                <property name="valign">center</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child>
+            <object class="AdwPreferencesGroup" id="preferred_players_list">
+                <property name="title">Preferred Players</property>
+                <property name="description">Only show the indicator for the listed players</property>
+                <property name="header-suffix">
+                    <object class="GtkButton" id="add_player">
+                        <property name="valign">center</property>
+                        <property name="child">
+                            <object class="AdwButtonContent">
+                                <property name="icon-name">multimedia-player-symbolic</property>
+                                <property name="label" translatable="yes">_Add Player</property>
+                                <property name="use-underline">True</property>
+                            </object>
+                        </property>
+                    </object>
+                </property>
+            </object>
+        </child>
+    </object>
+</interface>

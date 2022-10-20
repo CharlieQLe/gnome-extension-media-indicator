@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema id="org.gnome.shell.extensions.media-indicator" path="/org/gnome/shell/extensions/media-indicator/">
+        <key name="use-preferred-players" type="b">
+            <default>false</default>
+        </key>
+        <key name="preferred-players" type="as">
+            <default>[]</default>
+        </key>
+    </schema>
+</schemalist>

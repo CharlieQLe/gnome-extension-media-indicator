@@ -1,0 +1,11 @@
+{
+  "name": "Media Indicator",
+  "description": "Shows an indicator next to the clock if music is playing",
+  "uuid": "media-indicator@charlieqle",
+  "shell-version": [
+    "42",
+    "43"
+  ],
+  "url": "https://github.com/CharlieQLe/gnome-extension-media-indicator",
+  "settings-schema": "org.gnome.shell.extensions.media-indicator"
+}
