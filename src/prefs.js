@@ -54,7 +54,7 @@ function fillPreferencesWindow(window) {
     preferredPlayers.forEach((playerName, index) => buildRow(playerName, index));
 
     // Show empty row if no other rows are found
-    if (playerRows.length === 0) emptyRow.set_visible(true);
+    if (playerRows.length === 0) emptyRow.show();
 
     function buildRow(text, index) {
         // Data
@@ -83,7 +83,7 @@ function fillPreferencesWindow(window) {
                 d.index--;
             });
             mediaSettings.preferredPlayers = preferredPlayers;
-            if (playerRows.length === 0) emptyRow.set_visible(true);
+            if (playerRows.length === 0) emptyRow.show();
         });
         data.row.add_suffix(removeButton);
 
@@ -95,7 +95,7 @@ function fillPreferencesWindow(window) {
         });
 
         // Hide empty row
-        emptyRow.set_visible(false);
+        emptyRow.hide();
 
         // Add row
         playerListWidget.add(data.row);
