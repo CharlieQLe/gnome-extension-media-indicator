@@ -23,7 +23,7 @@
 const Main = imports.ui.main;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
-const { MediaIndicator } = Me.imports.mediaIndicator;
+const { MprisIndicator } = Me.imports.mprisIndicator;
 
 class Extension {
     constructor(uuid) {
@@ -32,7 +32,7 @@ class Extension {
 
     enable() {
         this._box = Main.panel.statusArea.dateMenu._indicator.get_parent();
-        this._indicator = new MediaIndicator();
+        this._indicator = new MprisIndicator();
         this._box.insert_child_at_index(this._indicator, 1);
     }
 

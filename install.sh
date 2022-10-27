@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EXTENSION_PATH="$HOME/.local/share/gnome-shell/extensions/media-indicator@charlieqle"
+EXTENSION_PATH="$HOME/.local/share/gnome-shell/extensions/mpris-indicator@charlieqle"
 
 rm -r "$EXTENSION_PATH" 2> /dev/null
 glib-compile-schemas "./src/schemas/"

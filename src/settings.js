@@ -35,7 +35,7 @@ var Settings = class Settings {
 /**
  * Handles settings for this extension.
  */
-var MediaSettings = class extends Settings {
+var MprisSettings = class extends Settings {
     static USE_PREFERRED_PLAYERS = "use-preferred-players";
     static PREFERRED_PLAYERS = "preferred-players";
 
@@ -45,26 +45,26 @@ var MediaSettings = class extends Settings {
     }
 
     constructor() { 
-        super(MediaSettings.getNewSchema()); 
+        super(MprisSettings.getNewSchema()); 
     }
 
     get usePreferredPlayers() {
-        return this.getBoolean(MediaSettings.USE_PREFERRED_PLAYERS);
+        return this.getBoolean(MprisSettings.USE_PREFERRED_PLAYERS);
     }
 
     get preferredPlayers() {
-        return this.getStrings(MediaSettings.PREFERRED_PLAYERS);
+        return this.getStrings(MprisSettings.PREFERRED_PLAYERS);
     }
 
     set preferredPlayers(players) {
-        this.setStrings(MediaSettings.PREFERRED_PLAYERS, players);
+        this.setStrings(MprisSettings.PREFERRED_PLAYERS, players);
     }
 
     onChangedUsePreferredPlayers(func) {
-        this.onChanged(MediaSettings.USE_PREFERRED_PLAYERS, func);
+        this.onChanged(MprisSettings.USE_PREFERRED_PLAYERS, func);
     }
 
     onChangedPreferredPlayers(func) {
-        this.onChanged(MediaSettings.PREFERRED_PLAYERS, func);
+        this.onChanged(MprisSettings.PREFERRED_PLAYERS, func);
     }
 }

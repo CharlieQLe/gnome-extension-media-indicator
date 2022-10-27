@@ -1,11 +1,11 @@
 {
-  "name": "Media Indicator",
+  "name": "Mpris Indicator",
   "description": "Shows an indicator next to the clock if music is playing",
-  "uuid": "media-indicator@charlieqle",
+  "uuid": "mpris-indicator@charlieqle",
   "shell-version": [
     "42",
     "43"
   ],
-  "url": "https://github.com/CharlieQLe/gnome-extension-media-indicator",
-  "settings-schema": "org.gnome.shell.extensions.media-indicator"
+  "url": "https://github.com/CharlieQLe/gnome-extension-mpris-indicator",
+  "settings-schema": "org.gnome.shell.extensions.mpris-indicator"
 }

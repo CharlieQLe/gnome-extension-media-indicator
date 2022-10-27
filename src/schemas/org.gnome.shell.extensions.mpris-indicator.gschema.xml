@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-    <schema id="org.gnome.shell.extensions.media-indicator" path="/org/gnome/shell/extensions/media-indicator/">
+    <schema id="org.gnome.shell.extensions.mpris-indicator" path="/org/gnome/shell/extensions/mpris-indicator/">
         <key name="use-preferred-players" type="b">
             <default>false</default>
         </key>

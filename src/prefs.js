@@ -4,7 +4,7 @@ const { Adw, Gio, GLib, Gtk } = imports.gi;
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
-const { MediaSettings } = Me.imports.settings;
+const { MprisSettings } = Me.imports.settings;
 
 /**
  * Like `extension.js` this is used for any one-time setup like translations.
@@ -23,19 +23,19 @@ function init(meta) { }
  * @param {Adw.PreferencesWindow} window - The preferences window
  */
 function fillPreferencesWindow(window) {
-    const mediaSettings = new MediaSettings();
+    const mprisSettings = new MprisSettings();
     const builder = new Gtk.Builder();
     builder.add_from_file(`${Me.path}/ui/main.xml`);
     window.add(builder.get_object("general"));
 
     // Handle using a new player
-    const usePlayersButton = builder.get_object(MediaSettings.USE_PREFERRED_PLAYERS.replaceAll("-", "_"));
-    mediaSettings.schema.bind(MediaSettings.USE_PREFERRED_PLAYERS, usePlayersButton, "active", Gio.SettingsBindFlags.DEFAULT);
+    const usePlayersButton = builder.get_object(MprisSettings.USE_PREFERRED_PLAYERS.replaceAll("-", "_"));
+    mprisSettings.schema.bind(MprisSettings.USE_PREFERRED_PLAYERS, usePlayersButton, "active", Gio.SettingsBindFlags.DEFAULT);
 
     // Initial
     const playerRows = [];
     const emptyRow = new Adw.ActionRow({ title: "No players found" });
-    let preferredPlayers = mediaSettings.preferredPlayers;
+    let preferredPlayers = mprisSettings.preferredPlayers;
 
     // Get the list widget
     const playerListWidget = builder.get_object("preferred_players_list");
@@ -47,7 +47,7 @@ function fillPreferencesWindow(window) {
     playerListAddButton.connect("clicked", () => {
         buildRow("", preferredPlayers.length);
         preferredPlayers.push("");
-        mediaSettings.preferredPlayers = preferredPlayers;
+        mprisSettings.preferredPlayers = preferredPlayers;
     });
 
     // Add existing players
@@ -82,7 +82,7 @@ function fillPreferencesWindow(window) {
                 if (i < data.index) return;
                 d.index--;
             });
-            mediaSettings.preferredPlayers = preferredPlayers;
+            mprisSettings.preferredPlayers = preferredPlayers;
             if (playerRows.length === 0) emptyRow.show();
         });
         data.row.add_suffix(removeButton);
@@ -91,7 +91,7 @@ function fillPreferencesWindow(window) {
         data.row.set_text(text);
         data.row.connect("changed", () => {
             preferredPlayers[index] = data.row.get_text();
-            mediaSettings.preferredPlayers = preferredPlayers;
+            mprisSettings.preferredPlayers = preferredPlayers;
         });
 
         // Hide empty row
